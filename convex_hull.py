@@ -234,8 +234,6 @@ class ConvexHullSolver(QObject):
         the node can be used as the pivot node for the next hull.
         """
         if len(points) < 4:
-            # base case: return a list of the points sorted by slope when a line
-            # 	is made between it and the leftmost point
             extreme = self.find_extreme(points, side)
             points_sorted_cw = self.sorted_points_cw(extreme, points, side)
             reference_node = self.construct_hull_list(points_sorted_cw)
